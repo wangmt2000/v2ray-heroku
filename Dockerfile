@@ -8,7 +8,7 @@ FROM heroku/heroku:18
 
 RUN mkdir -m 777 /v2raybin 
 RUN cd /v2raybin
-RUN curl -L -H "Cache-Control: no-cache" -o v2ray.zip https://github.com/v2ray/v2ray-core/releases/download/v$VER/v2ray-linux-64.zip 
+RUN curl -L -H "Cache-Control: no-cache" -o /v2raybin/v2ray.zip https://github.com/v2ray/v2ray-core/releases/download/v$VER/v2ray-linux-64.zip 
 RUN unzip v2ray.zip 
 RUN chmod +x /v2raybin/v2ray 
 #rm -rf v2ray.zip 
