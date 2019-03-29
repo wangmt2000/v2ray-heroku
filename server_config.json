@@ -4,7 +4,9 @@
   },
   "inbound": {
     "protocol": "vmess",
-    "port": 66666,
+   
+  # "port": 66666,
+  "port": process.env.PORT || 8001
     "settings": {
       "clients": [
         {
