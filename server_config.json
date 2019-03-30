@@ -5,7 +5,7 @@
   "inbound": {
     "protocol": "vmess",
    
-   "port": “process.env.PORT”,
+   "port": <%= ENV['PORT'] %>,
     "settings": {
       "clients": [
         {
