@@ -19,7 +19,7 @@ RUN chmod +x /v2raybin/v2ray
 RUN chgrp -R 0 /v2raybin 
 RUN chmod -R g+rwX /v2raybin
 ADD entrypoint.sh /entrypoint.sh
-ADD server_config.json /v2raybin/config.json
+#ADD server_config.json /v2raybin/config.json
 RUN chmod +x /entrypoint.sh 
 
 CMD /entrypoint.sh
