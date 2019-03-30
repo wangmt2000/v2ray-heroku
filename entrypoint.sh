@@ -1,4 +1,4 @@
-cd /v2raybin
+#cd /v2raybin
 #if [ "$VER" = "latest" ]; then
  # wget http://storage.googleapis.com/v2ray-docker/v2ray 
   #wget http://storage.googleapis.com/v2ray-docker/v2ctl
@@ -13,6 +13,17 @@ cd /v2raybin
 #chgrp -R 0 /v2raybin 
 #chmod -R g+rwX /v2raybin
 
+cd /v2raybin
+echo -e -n "$CONFIG_JSON1" > config.json
+echo -e -n "$PORT" >> config.json
+echo -e -n "$CONFIG_JSON2" >> config.json
+echo -e -n "$UUID" >> config.json
+echo -e -n "$CONFIG_JSON3" >> config.json
+if [ "$CERT_PEM" != "$KEY_PEM" ]; then
+echo -e "$CERT_PEM" > cert.pem
+echo -e "$KEY_PEM"  > key.pem
+fi
+./v2ray
 
 
 
@@ -26,8 +37,8 @@ cd /v2raybin
  # mv /v2raybin/v2ray-v$VER-linux-64/geosite.dat .
 #fi
 
-chmod +x v2ray
-chmod +x v2ctl
+#chmod +x v2ray
+#chmod +x v2ctl
 
 #echo -e -n "$CONFIG_JSON1" > config.json
 #echo -e -n "$PORT" >> config.json
@@ -35,7 +46,7 @@ chmod +x v2ctl
 #echo -e -n "$UUID" >> config.json
 #echo -e -n "$CONFIG_JSON3" >> config.json
 
-sed -i "s/66666/$PORT/g" config.json
-sed -i "s/your_uuid/$UUID/g" config.json
+#sed -i "s/66666/$PORT/g" config.json
+#sed -i "s/your_uuid/$UUID/g" config.json
 
-./v2ray
+#./v2ray
