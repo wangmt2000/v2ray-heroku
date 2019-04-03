@@ -1,4 +1,4 @@
-func main() {
+{func main() {
     port := os.Getenv("PORT")
 
     if port == "" {
@@ -28,4 +28,5 @@ func main() {
     "protocol": "freedom",
     "settings": {}
   }
+}
 }
